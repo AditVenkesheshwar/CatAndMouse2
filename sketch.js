@@ -6,23 +6,23 @@ var jerry, jerry1,jerry2,jerry2,jerry4;
 function preload(){
 bg = loadImage("images/garden.png");
 tomImg1 = loadAnimation("images/cat1.png");
-tomImg2 = loadAnimation("images/cat2.png", "/images/cat3.png");
+tomImg2 = loadAnimation("images/cat2.png", "images/cat3.png");
 tomImg3 = loadAnimation("images/cat4.png");
 //tomImg4 = loadAnimation("/images/cat1.png");
 jerryImg1 = loadAnimation("images/mouse1.png");
-jerryImg2 = loadAnimation("images/mouse2.png");
-jerryImg3 = loadAnimation("images/mouse3.png");
-jerryImg4 = loadAnimation("images/mouse4.png");
+jerryImg2 = loadAnimation("images/mouse2.png", "images/mouse3.png" );
+jerryImg3 = loadAnimation("images/mouse4.png");
+//jerryImg4 = loadAnimation("images/mouse4.png");
 }
 
 function setup(){
-    canvas = createCanvas(1000,1000);
+    canvas = createCanvas(1000,800);
 
-    tom = createSprite(880,800);
+    tom = createSprite(880,600);
     tom.addAnimation("tomAsleep", tomImg1);
     tom.scale = 0.1;
 
-    jerry = createSprite(880,800);
+    jerry = createSprite(200,600);
     jerry.addAnimation("jerryStandingStill", jerryImg1);
     jerry.scale = 0.1;
 }
@@ -36,7 +36,7 @@ function draw(){
         tom.addAnimation("tomImg3", tomImg3);
         tom.x = 300;
         tom.scale = 0.2;
-        tom.changeAnimation("tom img3")
+        tom.changeAnimation("tomImg3")
         jerry.addAnimation("jerryImg3", jerryImg3);
         jerry.scale = 0.15;
         jerry.changeAnimation("jerryImg3")
@@ -52,9 +52,8 @@ function keyPressed(){
         tom.changeAnimation("tomSprinting")
 
         jerry.addAnimation("jerryAn1", jerryImg2);
-        jerry.frameDelay = -25;
+        jerry.frameDelay = 25;
         jerry.changeAnimation("jerryAn1");
 
     }
 }
-
